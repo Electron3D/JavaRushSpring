@@ -1,4 +1,4 @@
-package com.electron3d.JavaRushSpring.domain;
+package com.electron3d.domain;
 
 public enum Status {
     IN_PROGRESS,
