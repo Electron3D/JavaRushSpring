@@ -1,16 +1,19 @@
 package com.electron3d.domain;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(schema = "todo", name = "task")
-@Data
+@Getter
+@Setter
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
     private String description;
-    @Enumerated(EnumType.ORDINAL)
+    @Enumerated
+    @Column(name = "status", columnDefinition = "int")
     private Status status;
 }
